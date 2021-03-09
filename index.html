@@ -9,7 +9,7 @@
       <!-- Generatore Lista invitati -->
     <script type="text/javascript">
 
-    // Generatore di "nomi cognomi" casuali: prendendo una
+      // Generatore di "nomi cognomi" casuali: prendendo una
       // lista di nomi e una lista di cognomi, Gatsby vuole
       // generare una falsa lista di invitati.
 
@@ -27,6 +27,40 @@
       }
 
       console.log(fullnames);
+      console.log("-------- FINE ESERCIZIO---------")
+
+    </script>
+
+    <!-- creare 2 array di lunghezza uguale, partendo da array di lunghezze diverse -->
+    <script type="text/javascript">
+
+      // Crea due array che hanno un numero di elementi diversi.
+      var arr1 = [12,3,45,6];
+      var arr2 = [166, 7,8,9,23,67,89];
+
+      // Aggiungi elementi all'array che ha meno elementi fino a
+      // quando ne avrà tanti quanti l'altro.
+
+      var arrMin = "SONO UGUALI";
+      var arrMax = "SONO UGUALI";
+
+      if (arr1.length < arr2.length) {
+        arrMin = arr1;
+        arrMax = arr2;
+      } else if (arr1.length > arr2.length) {
+        arrMax = arr1;
+        arrMin = arr2;
+      }
+
+      console.log("l'array più piccolo: " ,arrMin);
+
+      while (arrMin.length < arrMax.length) {
+        var numRnd = Math.ceil(Math.random()*10);
+        arrMin.push(numRnd);
+      }
+
+      console.log(arr1,arr2);
+      console.log("-------- FINE ESERCIZIO---------");
 
     </script>
 
