@@ -3,8 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Snacks JS Blocco 1</title>
+    <style media="screen">
+
+      #rosso{
+        color:red;
+      }
+
+      #verde{
+        color:green;
+      }
+
+    </style>
   </head>
+
   <body>
+
+    <div id="rosso"></div>
+    <div id="verde"></div>
 
       <!-- Generatore Lista invitati -->
     <script type="text/javascript">
@@ -59,7 +74,7 @@
         arrMin.push(numRnd);
       }
 
-      console.log(arr1,arr2);
+      console.log("Array con lunghezza uguale : ",arr1,arr2);
       console.log("-------- FINE ESERCIZIO---------");
 
     </script>
@@ -70,24 +85,49 @@
       // Chiedere all'utente un valore limite, poi richiedere all'utente una serie di valori
       // finche' la somma non supera il valore limite e stampare i valori forniti dall'utente
 
-      // var bigNum = parseInt(prompt("Dimmi il numero da raggiungere"));
-      // var sum = 0;
-      // console.log("Numero da raggiungere ",bigNum);
-      //
-      // while (sum <= bigNum){
-      //   var partialNum = parseInt(prompt("Dimmi i numeri per raggiungere"));
-      //   sum = sum + partialNum;
-      //   if ( sum <= 50){
-      //     var message = "Somma parziale : "
-      //   } else {
-      //     var message = "Somma totale : "
-      //   }
-      //   console.log("Numero random" , partialNum, message, sum);
-      // }
-      //
-      // console.log("-------- FINE ESERCIZIO---------");
+      var bigNum = parseInt(prompt("Dimmi il numero da raggiungere"));
+      var sum = 0;
+      console.log("Numero da raggiungere ",bigNum);
+
+      while (sum <= bigNum){
+        var partialNum = parseInt(prompt("Dimmi i numeri per raggiungere"));
+        sum = sum + partialNum;
+        if ( sum <= 50){
+          var message = "Somma parziale : "
+        } else {
+          var message = "Somma totale : "
+        }
+        console.log("Numero random" , partialNum, message, sum);
+      }
+
+      console.log("-------- FINE ESERCIZIO---------");
 
     </script>
+
+
+    <script type="text/javascript">
+
+      // Crea due tag div con due id diversi.
+      // Un div avrà il testo colorato di rosso mentre l'altro di verde.
+      // Partendo da un array di numeri, stampiamo nell'id rosso i numeri
+      // dispari e in verde i numeri pari.
+      var numbersDiv = [15, 20, 1, 3, 22];
+      var insertDispari = document.getElementById("rosso");
+      var insertPari = document.getElementById("verde");
+
+      for (i=0;i<numbersDiv.length;i++){
+
+        if (numbersDiv[i] % 2 == 1){
+          insertDispari.innerHTML += numbersDiv[i] + "<br>";
+        } else {
+          insertPari.innerHTML += numbersDiv[i] + "<br>";
+        }
+
+      }
+
+    </script>
+
+
 
   </body>
 </html>
