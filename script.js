@@ -145,10 +145,11 @@ function oddPairGreenRedBonus(){
 
 
 // OBJECTS EXERCISE
+// ESERCIZIO 1
 // Creare un oggetto che descriva uno studente con le
 // seguenti proprietà: nome, cognome e età. Stampare a
 // // schermo attraverso il for in tutte le proprietà.
-function init(){
+function singleStudent(){
   var student = {
     "nome" : "gino",
     "cognome" : "paoli",
@@ -160,5 +161,62 @@ function init(){
     console.log(key,value);
   }
 }
+// / richiamo funzione
+// $(document).ready(singleStudent);
 
-$(document).ready(init);
+
+
+// ESERCIZIO 2 + 3
+// Creare un array di oggetti di studenti. Ciclare su tutti gli
+// studenti e stampare per ognuno nome e cognome
+// - Dare la possibilità all'utente attraverso 3 prompt di
+// aggiungere un nuovo oggetto studente inserendo
+// nell'ordine: nome, cognome e età.
+function multipleStudents(){
+  var students = [
+
+    {
+      "nome" : "gino",
+      "cognome" : "paoli",
+      "eta" : "80"
+    },
+    {
+      "nome" : "marco",
+      "cognome" : "columbro",
+      "eta" : "60"
+    },
+    {
+      "nome" : "gerry",
+      "cognome" : "scotti",
+      "eta" : "65"
+    },
+    {
+      "nome" : "ezio",
+      "cognome" : "greggio",
+      "eta" : "666"
+    }
+
+  ]
+
+  for(var i=0;i<students.length;i++){
+    var student = students[i];
+    console.log(student["nome"]);
+    console.log(student["cognome"]);
+  }
+
+  var newStudentName = prompt("Dimmi nome");
+  var newStudentSurname = prompt("Dimmi cognome");
+  var newStudentAge = prompt("Dimmi età");
+  var newStudent = {
+    "nome" : newStudentName,
+    "cognome" : newStudentSurname,
+    "eta" : newStudentAge
+  }
+
+  students.push(newStudent);
+  console.log(students);
+
+}
+
+// richiamo funzione
+$(document).ready(multipleStudents);
