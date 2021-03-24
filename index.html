@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Snacks JS Blocco 1</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style media="screen">
 
       #rosso{
@@ -14,119 +16,10 @@
       }
 
     </style>
+    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
-
-    <div id="rosso"></div>
-    <div id="verde"></div>
-
-      <!-- Generatore Lista invitati -->
-    <script type="text/javascript">
-
-      // Generatore di "nomi cognomi" casuali: prendendo una
-      // lista di nomi e una lista di cognomi, Gatsby vuole
-      // generare una falsa lista di invitati.
-
-      var names = ['Michele', 'Fabio', 'Roberto'];
-      var lastnames = ['Forghieri', 'Papagni', 'Marazzini'];
-      var fullnames = [];
-
-      for (var i = 0; i < 5; i++) {
-        var namesRnd = names[Math.floor(Math.random()*3)];
-        var lastnamesRnd = lastnames[Math.floor(Math.random()*3)];
-        var fullname = namesRnd + " " + lastnamesRnd;
-
-        console.log(fullname);
-        fullnames.push(fullname);
-      }
-
-      console.log(fullnames);
-      console.log("-------- FINE ESERCIZIO---------")
-
-    </script>
-
-    <!-- creare 2 array di lunghezza uguale, partendo da array di lunghezze diverse -->
-    <script type="text/javascript">
-
-      // Crea due array che hanno un numero di elementi diversi.
-      var arr1 = [12,3,45,6];
-      var arr2 = [166, 7,8,9,23,67,89];
-
-      // Aggiungi elementi all'array che ha meno elementi fino a
-      // quando ne avrà tanti quanti l'altro.
-
-      var arrMin = "SONO UGUALI";
-      var arrMax = "SONO UGUALI";
-
-      if (arr1.length < arr2.length) {
-        arrMin = arr1;
-        arrMax = arr2;
-      } else if (arr1.length > arr2.length) {
-        arrMax = arr1;
-        arrMin = arr2;
-      }
-
-      console.log("l'array più piccolo: " ,arrMin);
-
-      while (arrMin.length < arrMax.length) {
-        var numRnd = Math.ceil(Math.random()*10);
-        arrMin.push(numRnd);
-      }
-
-      console.log("Array con lunghezza uguale : ",arr1,arr2);
-      console.log("-------- FINE ESERCIZIO---------");
-
-    </script>
-
-    <!-- somma numeri forniti dall'utente -->
-    <script type="text/javascript">
-
-      // Chiedere all'utente un valore limite, poi richiedere all'utente una serie di valori
-      // finche' la somma non supera il valore limite e stampare i valori forniti dall'utente
-
-      var bigNum = parseInt(prompt("Dimmi il numero da raggiungere"));
-      var sum = 0;
-      console.log("Numero da raggiungere ",bigNum);
-
-      while (sum <= bigNum){
-        var partialNum = parseInt(prompt("Dimmi i numeri per raggiungere"));
-        sum = sum + partialNum;
-        if ( sum <= bigNum){
-          var message = "Somma parziale : "
-        } else {
-          var message = "Somma totale : "
-        }
-        console.log("Numero random" , partialNum, message, sum);
-      }
-
-      console.log("-------- FINE ESERCIZIO---------");
-
-    </script>
-
-    <!-- Inserire numeri pari / dispari nell' HTML -->
-    <script type="text/javascript">
-
-      // Crea due tag div con due id diversi.
-      // Un div avrà il testo colorato di rosso mentre l'altro di verde.
-      // Partendo da un array di numeri, stampiamo nell'id rosso i numeri
-      // dispari e in verde i numeri pari.
-      var numbersDiv = [15, 20, 1, 3, 22];
-      var insertDispari = document.getElementById("rosso");
-      var insertPari = document.getElementById("verde");
-
-      for (i=0;i<numbersDiv.length;i++){
-
-        if (numbersDiv[i] % 2 == 1){
-          insertDispari.innerHTML += numbersDiv[i] + "<br>";
-        } else {
-          insertPari.innerHTML += numbersDiv[i] + "<br>";
-        }
-
-      }
-
-    </script>
-
 
 
   </body>
