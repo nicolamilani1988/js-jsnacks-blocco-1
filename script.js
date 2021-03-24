@@ -1,3 +1,4 @@
+// ESERCIZI JAVASCRIPT SEMPLICE
 // ESERCIZIO 1
 // Generatore di "nomi cognomi" casuali: prendendo una
 // lista di nomi e una lista di cognomi, Gatsby vuole
@@ -17,9 +18,8 @@ function nameListGenerator (){
   }
 
   console.log(fullnames);
+  console.log("------");
 }
-// richiamo funzione
-// $(document).ready(nameListGenerator);
 
 
 
@@ -48,9 +48,9 @@ function sameArray(){
   }
 
   console.log("Array con lunghezza uguale : ",arr1,arr2);
+  console.log("------");
+
 }
-// richiamo funzione
-// $(document).ready(sameArray);
 
 
 
@@ -71,10 +71,10 @@ function sumPromptNumbers(){
       var message = "Somma totale : "
     }
     console.log("Numero random" , partialNum, message, sum);
+
   }
+  console.log("------");
 }
-// richiamo funzione
-// $(document).ready(sumPromptNumbers);
 
 
 
@@ -98,8 +98,6 @@ function oddPairGreenRed(){
 
   }
 }
-// richiamo funzione
-// $(document).ready(oddPairGreenRed);
 
 
 
@@ -126,21 +124,31 @@ function randomGenerator(min,max,totLength){
 
 function oddPairGreenRedBonus(){
   var numbersDiv = randomGenerator(1,99,10);
-  var insertDispari = document.getElementById("rosso");
-  var insertPari = document.getElementById("verde");
 
   for (i=0;i<numbersDiv.length;i++){
 
     if (numbersDiv[i] % 2 == 1){
-      $("body").append('<div id="rosso">'+numbersDiv[i]+'</div>');
+      $("body").append('<div id="blu">'+numbersDiv[i]+'</div>');
     } else {
-      $("body").append('<div id="verde">'+numbersDiv[i]+'</div>');
+      $("body").append('<div id="viola">'+numbersDiv[i]+'</div>');
     }
 
   }
 }
-// richiamo funzione
-// $(document).ready(oddPairGreenRedBonus);
+
+
+// TUTTE LE FUNCTION JAVASCRIPT SEMPLICE
+function initJsnacks(){
+  nameListGenerator(); //ESERCIZIO 1
+  sameArray(); //ESERCIZIO 2
+  sumPromptNumbers(); //ESERCIZIO 3
+  oddPairGreenRed(); //ESERCIZIO 4
+  oddPairGreenRedBonus(); //ESERCIZIO 4-bonus
+}
+// RICHIAMO FUNCTION JAVASCRIPT SEMPLICE
+// $(document).ready(initJsnacks);
+
+
 
 
 
@@ -151,9 +159,9 @@ function oddPairGreenRedBonus(){
 // // schermo attraverso il for in tutte le proprietà.
 function singleStudent(){
   var student = {
-    "nome" : "gino",
-    "cognome" : "paoli",
-    "eta" : "80"
+    "nome" : "franco",
+    "cognome" : "califano",
+    "eta" : "30"
   }
   console.log(student);
   for(var key in student){
@@ -161,8 +169,6 @@ function singleStudent(){
     console.log(key,value);
   }
 }
-// / richiamo funzione
-// $(document).ready(singleStudent);
 
 
 
@@ -218,5 +224,10 @@ function multipleStudents(){
 
 }
 
-// richiamo funzione
-$(document).ready(multipleStudents);
+// TUTTE LE FUNCTION OBJECT
+function init(){
+  singleStudent();
+  multipleStudents();
+}
+
+$(document).ready(init);
