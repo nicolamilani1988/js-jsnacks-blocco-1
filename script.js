@@ -155,6 +155,10 @@ function init(){
     "eta" : "80"
   }
   console.log(student);
+  for(var key in student){
+    var value = student[key];
+    console.log(key,value);
+  }
 }
 
 $(document).ready(init);
