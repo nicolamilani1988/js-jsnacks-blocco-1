@@ -226,8 +226,8 @@ function multipleStudents(){
 
 // TUTTE LE FUNCTION OBJECT
 function init(){
-  singleStudent();
-  multipleStudents();
+  // singleStudent();
+  // multipleStudents();
 }
 
 $(document).ready(init);
