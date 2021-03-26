@@ -177,8 +177,111 @@ function esArraySplitter() {
     var indMin = 3;
     var indMax = 7;
     var splitted = splitter(indMin, indMax, arr);
-    
+
     console.log(splitted);
+}
+
+function bicycle(){
+  // Creare un array di oggetti: ogni oggetto descriverà
+// una bici da corsa con le seguenti proprietà: nome e peso.
+// Stampare a schermo la bici con peso minore.
+  let bicycles = [
+    {
+      name:"Cinzia",
+      "peso": 9
+    },
+    {
+      name:"Paola",
+      "peso": 80
+    },
+    {
+      name:"Anna",
+      "peso": 50
+    }
+  ];
+
+  let lighter = {
+    name : "massimo",
+    "peso" : Number.MAX_VALUE
+  }
+
+  for(let i=0;i<bicycles.length;i++){
+
+    const bicycle = bicycles[i];
+    const {name,peso} = bicycle;
+
+                       // bicycle["peso"]
+    if(lighter["peso"] > peso){
+      lighter = bicycle;
+    }
+
+  }
+
+  console.log(lighter);
+
+}
+
+
+
+function teams(){
+    // Creare un array di oggetti di squadre di calcio.
+    // Ogni squadra avrà diverse proprietà:
+    // nome, punti fatti, falli subiti.
+    // Nome sarà l'unica proprietà da compilare,
+    // le altre saranno tutte settate a 0.
+    // Generare numeri random al posto degli 0 nelle proprietà:
+   // punti fatti e falli subiti.
+   // Usando la destrutturazione creiamo un nuovo array
+    // i cui elementi contengono solo nomi e falli subiti
+    // e stampiamo tutto in console.
+    const teams = [
+      {
+        nome: "Mavericks",
+        punti: 0,
+        falli:0
+      },
+      {
+        nome: "Bucks",
+        punti: 0,
+        falli:0
+      },
+      {
+        nome: "Lakers",
+        punti: 0,
+        falli:0
+      },
+    ]
+
+
+    for(let i=0;i<teams.length;i++){
+      const team = teams[i];
+      const rndPoint = getRndNumber(1,99);
+      team["punti"] = rndPoint;
+      const rndFouls = getRndNumber(1,99);
+      team["falli"] = rndFouls;
+    }
+
+    console.log("modified ", teams);
+
+    let newTeams = [];
+    for(let i = 0;i<teams.length;i++){
+      const team = teams[i];
+      let {nome,falli} = team;
+      let newTeam = {nome,falli};
+      newTeams.push(newTeam);
+    }
+
+    console.log(newTeams);
+
+}
+
+
+function getRndNumber(min,max){
+  const minRnd = min;
+  const maxRnd = max-minRnd+1;
+  const rndNum = Math.floor(Math.random()*maxRnd)+minRnd;
+  // console.log(rndNum);
+  return rndNum;
 }
 
 
@@ -189,7 +292,10 @@ function init(){
   // reverseWord("ciao");
   // reverseWordCycle("ciao");
   // alternateArray();
-  esArraySplitter();
+  // esArraySplitter();
+  // bicycle();
+  teams();
+
 
 }
 
