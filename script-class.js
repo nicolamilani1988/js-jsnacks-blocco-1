@@ -275,13 +275,51 @@ function teams(){
 
 }
 
-
 function getRndNumber(min,max){
   const minRnd = min;
   const maxRnd = max-minRnd+1;
   const rndNum = Math.floor(Math.random()*maxRnd)+minRnd;
   // console.log(rndNum);
   return rndNum;
+}
+
+// SVOLGIMENTO CON DESTRUTTURAZIONE ARRAY [punti,falli]
+function teamsBonus(){
+  const teams = [
+    {
+      nome: "Mavericks",
+      punti: 0,
+      falli:0
+    },
+    {
+      nome: "Bucks",
+      punti: 0,
+      falli:0
+    },
+    {
+      nome: "Lakers",
+      punti: 0,
+      falli:0
+    },
+  ]
+
+  for(let i =0 ; i<teams.length;i++){
+    const team = teams[i];
+    [team["punti"],team["falli"] ]= getRndCouple(1,100);
+  }
+  console.log(teams);
+}
+
+
+
+
+function getRndCouple(min,max){
+  const minRnd = min;
+  const maxRnd = max-minRnd+1;
+  const rndNum1 = Math.floor(Math.random()*maxRnd)+minRnd;
+  const rndNum2 = Math.floor(Math.random()*maxRnd)+minRnd;
+
+  return [rndNum1,rndNum2];
 }
 
 
@@ -294,8 +332,8 @@ function init(){
   // alternateArray();
   // esArraySplitter();
   // bicycle();
-  teams();
-
+  // teams();
+  teamsBonus();
 
 }
 
